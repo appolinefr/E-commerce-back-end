@@ -20,7 +20,7 @@ router.get("/", async (req, res) => {
 
 router.get("/:id", async (req, res) => {
   try {
-    const tagData = await Tag.findByPk({
+    const tagData = await Tag.findByPk(req.params.id, {
       where: {
         id: req.params.id,
       },

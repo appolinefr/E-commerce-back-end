@@ -19,7 +19,7 @@ router.get("/", async (req, res) => {
 
 router.get("/:id", async (req, res) => {
   try {
-    const categoryData = await Category.findByPk({
+    const categoryData = await Category.findByPk(req.params.id, {
       where: {
         id: req.params.id,
       },
