@@ -23,7 +23,6 @@ router.get("/", async (req, res) => {
     res.status(500).json(err);
   }
 });
-// be sure to include its associated Category and Tag data
 
 // get one product
 router.get("/:id", async (req, res) => {
@@ -51,7 +50,6 @@ router.get("/:id", async (req, res) => {
     res.status(400).json(err);
   }
 });
-// be sure to include its associated Category and Tag data
 
 // create new product
 router.post("/", (req, res) => {
@@ -59,7 +57,7 @@ router.post("/", (req, res) => {
     product_name: req.body.product_name,
     price: req.body.price,
     stock: req.body.stock,
-    tagIds: req.body.tagIds,
+    category_id: req.body.category_id,
   })
     .then((product) => {
       // if there's product tags, we need to create pairings to bulk create in the ProductTag model
@@ -117,13 +115,14 @@ router.put("/:id", (req, res) => {
         ProductTag.bulkCreate(newProductTags),
       ]);
     })
-    .then((updatedProductTags) => res.json(updatedProductTags))
+    .then((updatedProductTags) => res.status(200).json(updatedProductTags))
     .catch((err) => {
       // console.log(err);
       res.status(400).json(err);
     });
 });
 
+//delete product
 router.delete("/:id", async (req, res) => {
   try {
     const deletedProduct = await Product.destroy({
@@ -134,7 +133,7 @@ router.delete("/:id", async (req, res) => {
     if (!deletedProduct) {
       res.status(404).json({ message: "No product with this id!" });
     }
-    res.status(200).json(deletedProduct);
+    res.status(200).json({ message: "Product has been deleted!" });
   } catch (err) {
     res.status(400).json(err);
   }
