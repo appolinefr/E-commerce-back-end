@@ -45,6 +45,8 @@ Run the following command:
 - npm run seed
 - npm start
 
+[Video Walkthrough of installation](https://drive.google.com/file/d/1QGcpd8oxk5WVz3PH9NykSBTTU0ERNM16/view)
+
 ### Screenshot of CLI
 
 ![Screenshot of Application](/image/e-commerce-back-end.png)
