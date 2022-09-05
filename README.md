@@ -6,7 +6,8 @@
 - [Project Requirements](#project-requirements)
 - [What I have learned](#what-i-have-learned)
 - [Challenges](#challenges)
-- [Screenshot of CLI](#screenshot-of-cli)
+- [Installation](#installation-💾)
+- [Screenshot of Application](#screenshot-of-application)
 - [Link to walkthrough video](#link-to-walkthrough-video)
 
 ## Description of Project
@@ -25,16 +26,29 @@ Here are the main requirements of the project:
 
 ## What I have learned
 
-
+It has been great learning about ORM and I am now comfortable using sequelize. I am looking forward to implementing the many features I have learned including password hashing and validation. 
+This project was the opportunity to implement async functions and I was able to right cleaner code with async/wait and the try/catch statement. 
 
 ## Challenges
 
+Learning sequelize has definitely been a learning curve but with practice and the help of the documentation I was able to implement it successfully for this challenge.
 
+## Installation 💾
+
+Run the following command:
+
+- npm i
+- mysql -u root -p
+- Enter PW when promted
+- source db/schema.sql
+- quit
+- npm run seed
+- npm start
 
 ### Screenshot of CLI
 
-![Screenshot of CLI](/image/)
+![Screenshot of Application](/image/e-commerce-back-end.png)
 
 ### Link to walkthrough video
 
-[Link to walkthrough video]()
+[Link to walkthrough video](https://drive.google.com/file/d/154t9ZmRYLNOIyuCLnaKOmYoGest0M9ar/view)
